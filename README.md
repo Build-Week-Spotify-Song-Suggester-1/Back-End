@@ -10,7 +10,8 @@
 
 
 
-**User Schema**
+### User Schema
+
 | name     | type      | required |
 | -------- | --------- | -------- |
 | username | string    | yes      |
