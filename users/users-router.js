@@ -2,7 +2,8 @@ const router = require('express').Router();
 
 const Users = require('./users-model');
 
-router.get('/users', (req, res) => {
+//'/api/users'
+router.get('/', (req, res) => {
     Users.find()
         .then(users => {
             res.status(200).json(users);
@@ -10,6 +11,7 @@ router.get('/users', (req, res) => {
         .catch(err => res.status(500).json({ message: 'Unable to retreive list of users', error: err }))
 });
 
+//'/api/users/:id'
 router.get('/:id', (req, res) => {
     const { id } = req.params;
 
