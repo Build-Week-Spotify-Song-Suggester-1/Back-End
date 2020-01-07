@@ -12,7 +12,9 @@
 
 ### User Schema
 
-| name     | type      | required |
-| -------- | --------- | -------- |
-| username | string    | yes      |
-| password | string    | yes      |
+| name       | type      | required |
+| ---------- | --------- | -------- |
+| username   | string    | yes      |
+| password   | string    | yes      |
+| first_name | string    | yes      |
+| last_name | string     | yes      |
