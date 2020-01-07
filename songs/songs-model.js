@@ -3,9 +3,19 @@ const db = require('../data/db-config');
 module.exports = {
     saveTrack, 
     removeTrack,
-    getSavedTrack
+    getSavedTrack,
+    findTrack,
+    findTrackById
 };
 
-function saveTrack() {
-    return db()
+function findTrack() {
+    return db('tracks')
+};
+
+function findTrackById(id) {
+    return db('tracks').where({ id });
 }
+
+function saveTrack('') {
+    return db('favoriteSongs')
+};
