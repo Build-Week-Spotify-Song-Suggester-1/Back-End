@@ -7,26 +7,27 @@ const authenticate = require('../auth/auth-middleware');
 
 //'/api/music' is part of the base url
 
-// get req from ds with one song (7)
-router.post('/', (req, res) => {
+// get req from ds with one song (7) WORKING
+router.post('/singletrack', (req, res) => {
     const track_id = req.body.track_id;
     axios.get(`https://spotifyflask.herokuapp.com/song/${track_id}`)
-        .then(res => {
-            res.status(200).json(res)
+        .then(response => {
+            return res.json(response.data)
         })
         .catch(err => {
+            console.log(err)
             res.status(500).json({ message: 'Unable to retrieve suggested playlist for track', error: err })
         })
 });
 
 //'/api/music/faves'
-// save song to favoriteSongs (5)
+// save song to favoriteSongs (5) WORKING
 router.post('/faves', (req, res) => {
     const trackToSave = req.body;
     console.log(trackToSave);
     Tracks.saveTrack(trackToSave)
         .then(newTrack => {
-            res.status(200).json(newTrack);
+            return res.status(200).json(newTrack);
         })
         .catch(err => {
             console.log(err)

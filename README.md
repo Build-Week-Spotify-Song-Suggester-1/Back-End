@@ -1,14 +1,18 @@
 # Back-End
 
+#### Deployed at 
+https://symphinity-backend.herokuapp.com/
+
 ## API Endpoints
-| Type | Endpoints             | Description                  |
-| ---- | --------------------- | ---------------------------- |
-| POST | /api/auth/register    | Register                     |
-| POST | /api/auth/login       | Login                        |
-| GET  | /api/users            | get all users                |
-| GET  | /api/users/:id        | get user by id               |
-| POST | /api/music/faves      | save a favorite song         |
-| GET  | /api/music/:id/faves  | get a user's favorited songs |
+| Type | Endpoints              | Description                        |
+| ---- | ---------------------- | ---------------------------------- |
+| POST | /api/auth/register     | Register                           |
+| POST | /api/auth/login        | Login                              |
+| GET  | /api/users             | get all users                      |
+| GET  | /api/users/:id         | get user by id                     |
+| POST | /api/music/faves       | save a favorite song               |
+| GET  | /api/music/:id/faves   | get a user's favorited songs       |
+| POST | /api/music/singletrack | use one song to get recommendations|
 
 
 
