@@ -35,6 +35,7 @@ https://symphinity-backend.herokuapp.com/
 
 ### Response Format 
 The response (song suggestions) will return as an array of objects ike the following: 
+```javascript
 [
  {
     "index": 20273,
@@ -79,3 +80,4 @@ The response (song suggestions) will return as an array of objects ike the follo
     "genre": "rnb"
   }
 ]
+```
