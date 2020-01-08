@@ -7,7 +7,7 @@ const authenticate = require('../auth/auth-middleware');
 
 //'/api/music' is part of the base url
 
-// get req from ds with one song (7)
+// get req from ds with one song (7) WORKING
 router.post('/singletrack', (req, res) => {
     const track_id = req.body.track_id;
     axios.get(`https://spotifyflask.herokuapp.com/song/${track_id}`)

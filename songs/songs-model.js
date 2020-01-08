@@ -33,6 +33,7 @@ function getSavedTrack(id) {
     return db('favoriteSongs').select().where({ user_id: id }).join('tracks', 'song_id', 'tracks.id');
 };
 
-function removeTrack(users_id, track_id) {
-    return db('favoriteSongs').select().where({ users_id, track_id }).limit(1).first().del();
+function removeTrack(user_id, track_id) {
+    return db('favoriteSongs').select().where({ user_id, full_track_id: track_id }).limit(1).first().del();
 };
+
