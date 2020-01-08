@@ -55,20 +55,16 @@ router.post('/:id/faves/playlist', (req, res) => {
 });
 
 
-//remove song from favorites list (9) WIP
+//remove song from favorites list 
 router.delete('/:id/faves/:track_id', (req, res) => {
     const id = req.params.id;
     const track_id = req.params.track_id;
-    if (id === req.users.id) {
-        Tracks.removeTrack(id, track_id)
-            .then(trackToDelete => {
-                res.status(200).json({ removed: trackToDelete })
-            })
-            .catch(err => console.log(err))
-    } else {
-        res.status(403).json({ message: 'Song ID not found' })
-    }
-  
+
+    Tracks.removeTrack(id, track_id)
+        .then(trackToDelete => {
+            res.status(200).json({ removed: trackToDelete })
+        })
+        .catch(err => console.log(err))
 });
 
 
