@@ -43,6 +43,9 @@ exports.up = function(knex) {
                 .inTable('tracks')
                 .onDelete('CASCADE')
                 .onUpdate('CASCADE');
+            tbl 
+                .string('full_track_id')
+                .notNullable();
         })
 };
 
