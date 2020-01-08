@@ -18,3 +18,11 @@
 | password   | string    | yes      |
 | first_name | string    | yes      |
 | last_name | string     | yes      |
+
+### Song Schema 
+
+| name        | type    | required |
+| ----------- | --------| -------- |
+| track_id    | string  | yes      |
+| track_name  | string  | yes      |
+| artist_name | string  | yes      |

@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const Users = require('../users/users-model');
 const genToken = require('./generate-token');
 
+
 //'/api/auth/register'
 router.post('/register', (req, res) => {
     let user = req.body;

@@ -1,4 +1,4 @@
-const jwt = require('jsonweboken');
+const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
     const jwtSecret = process.env.JWT_SECRET || 'keepitsecretandsafe';
