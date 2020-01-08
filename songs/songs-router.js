@@ -56,7 +56,7 @@ router.post('/:id/faves/playlist', (req, res) => {
 
 
 //remove song from favorites list 
-router.delete('/:id/faves/:track_id', (req, res) => {
+router.delete('/:id/faves/:track_id', authenticate, (req, res) => {
     const id = req.params.id;
     const track_id = req.params.track_id;
 
