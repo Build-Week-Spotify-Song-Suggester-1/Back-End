@@ -16,6 +16,7 @@ function findTrackById(id) {
     return db('tracks').where({ id });
 }
 
-function saveTrack('') {
+function saveTrack() {
     return db('favoriteSongs')
+        .insert(song)
 };
