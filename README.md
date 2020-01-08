@@ -82,3 +82,40 @@ The response (song suggestions) will return as an array of objects ike the follo
   }
 ]
 ```
+
+## Register a new user
+
+```javascript 
+{
+  "username": "testerUsername",
+  "first_name": "John",
+  "last_name": "Doe",
+  "password": "password123"
+}
+```
+
+## Login
+
+```javascript 
+{
+  "username": "testerUsername",
+  "password": "password123"
+}
+```
+## Use a single track for song suggestions
+
+```javascript 
+{
+  "track_id": "6vx0xD9tCnPhbOdC1s0cHM"
+}
+```
+
+## Save a song to a user's favorites 
+
+```javascript
+{
+	"song_id": "3",
+	"user_id": "1",
+	"full_track_id": "6vx0xD9tCnPhbOdC1s0cHM"
+}
+```
