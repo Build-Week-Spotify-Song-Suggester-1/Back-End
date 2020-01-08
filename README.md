@@ -4,15 +4,16 @@
 https://symphinity-backend.herokuapp.com/
 
 ## API Endpoints
-| Type | Endpoints              | Description                        |
-| ---- | ---------------------- | ---------------------------------- |
-| POST | /api/auth/register     | Register                           |
-| POST | /api/auth/login        | Login                              |
-| GET  | /api/users             | get all users                      |
-| GET  | /api/users/:id         | get user by id                     |
-| POST | /api/music/faves       | save a favorite song               |
-| GET  | /api/music/:id/faves   | get a user's favorited songs       |
-| POST | /api/music/singletrack | use one song to get recommendations|
+| Type   | Endpoints                      | Description                         |
+| ------ | ------------------------------ | ----------------------------------- |
+| POST   | /api/auth/register             | Register                            |
+| POST   | /api/auth/login                | Login                               |
+| GET    | /api/users                     | get all users                       |
+| GET    | /api/users/:id                 | get user by id                      |
+| POST   | /api/music/faves               | save a favorite song                |
+| GET    | /api/music/:id/faves           | get a user's favorited songs        |
+| POST   | /api/music/singletrack         | use one song to get recommendations |
+| DELETE | /api/music/:id/faves/:track_id | removes a song from faveSongs list  |
 
 
 
@@ -34,7 +35,7 @@ https://symphinity-backend.herokuapp.com/
 | artist_name | string  | yes      |
 
 ### Response Format 
-The response (song suggestions) will return as an array of objects ike the following: 
+The response (song suggestions) will return as an array of objects like the following: 
 ```javascript
 [
  {
@@ -81,3 +82,42 @@ The response (song suggestions) will return as an array of objects ike the follo
   }
 ]
 ```
+
+
+## Register a new user
+
+```javascript 
+{
+  "username": "testerUsername",
+  "first_name": "John",
+  "last_name": "Doe",
+  "password": "password123"
+}
+```
+
+## Login
+
+```javascript 
+{
+  "username": "testerUsername",
+  "password": "password123"
+}
+```
+## Use a single track for song suggestions
+
+```javascript 
+{
+  "track_id": "6vx0xD9tCnPhbOdC1s0cHM"
+}
+```
+
+## Save a song to a user's favorites 
+
+```javascript
+{
+	"song_id": "3",
+	"user_id": "1",
+	"full_track_id": "6vx0xD9tCnPhbOdC1s0cHM"
+}
+```
+
