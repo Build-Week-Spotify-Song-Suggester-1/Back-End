@@ -5,7 +5,9 @@ const axios = require('axios');
 const Tracks = require('./songs-model');
 const authenticate = require('../auth/auth-middleware');
 
-//'/api/music'
+//'/api/music' is part of the base url
+
+// get req from ds with one song (7)
 router.post('/', (req, res) => {
     const track_id = req.body.track_id;
     axios.get(`https://spotifyflask.herokuapp.com/song/${track_id}`)
@@ -18,6 +20,7 @@ router.post('/', (req, res) => {
 });
 
 //'/api/music/faves'
+// save song to favoriteSongs (5)
 router.post('/faves', (req, res) => {
     const trackToSave = req.body;
     console.log(trackToSave);
@@ -31,15 +34,38 @@ router.post('/faves', (req, res) => {
         })
 });
 
+//get all savedsongs from favoritesongs WORKING 
 router.get('/:id/faves', (req, res) => {
     const id = req.params.id;
     Tracks.getSavedTrack(id)
         .then(savedTracks => {
+            console.log(id)
             res.status(200).json(savedTracks);
         })
         .catch(err => {
             res.status(500).json({ message: 'Unable to retrieve favorites playlist', error: err })
         })
+});
+
+//endpoint to post playlist to ds api (8)
+
+
+
+
+//remove song from favorites list (9)
+router.delete('/:id/faves/:track_id', (req, res) => {
+    const id = req.params.id;
+    const track_id = req.params.track_id;
+
+    if (id === req.user.id) {
+        Tracks.removeTrack(id, track_id)
+            .then(trackToDelete => {
+                res.status(200).json(trackToDelete)
+            })
+            .catch(err => console.log(err))
+    } else {
+        console.log(id, req.user.id)
+    }
 });
 
 
