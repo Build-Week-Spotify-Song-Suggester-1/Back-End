@@ -35,7 +35,7 @@ https://symphinity-backend.herokuapp.com/
 | artist_name | string  | yes      |
 
 ### Response Format 
-The response (song suggestions) will return as an array of objects ike the following: 
+The response (song suggestions) will return as an array of objects like the following: 
 ```javascript
 [
  {
@@ -83,6 +83,7 @@ The response (song suggestions) will return as an array of objects ike the follo
 ]
 ```
 
+
 ## Register a new user
 
 ```javascript 
@@ -119,3 +120,4 @@ The response (song suggestions) will return as an array of objects ike the follo
 	"full_track_id": "6vx0xD9tCnPhbOdC1s0cHM"
 }
 ```
+
