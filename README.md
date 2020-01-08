@@ -34,7 +34,7 @@ https://symphinity-backend.herokuapp.com/
 | artist_name | string  | yes      |
 
 ### Response Format 
-The response (song suggestions) will return as an array of objects ike the following: 
+The response (song suggestions) will return as an array of objects like the following: 
 ```javascript
 [
  {
