@@ -1,5 +1,8 @@
 # Back-End
 
+#### Deployed at 
+https://symphinity-backend.herokuapp.com/
+
 ## API Endpoints
 | Type | Endpoints             | Description                  |
 | ---- | --------------------- | ---------------------------- |
