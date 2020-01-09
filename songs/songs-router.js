@@ -31,6 +31,19 @@ router.get('/:id/faves', (req, res) => {
         })
 });
 
+// get audio features visualizatioo for single track
+router.post('/singletrack/data', (req, res) => {
+    const track_id = req.body.track_id;
+    axios.get(`https://spotifyflask.herokuapp.com/image/${track_id}`)
+        .then(response => {
+            return res.json(response.data)
+        })
+        .catch(err => {
+            console.log(err)
+            rers.status(500).json({ message: 'Unable to retrieve radar graph', error: err })
+        })
+})
+
 // get req from ds with one song 
 router.post('/singletrack', (req, res) => {
     const track_id = req.body.track_id;
@@ -46,12 +59,16 @@ router.post('/singletrack', (req, res) => {
 
 //endpoint to post playlist to ds api WIP
 router.post('/:id/faves/playlist', (req, res) => {
-//     const id = req.params.id;
-//     Tracks.getSavedTrack(id)
-//         .then(savedTracks => {
-//             return savedTracks;
-//         })
-//         .catch(err => console.log(err))
+     const id = req.params.id;
+     Tracks.getSavedTrack(id)
+        .then(savedTracks => {
+            return savedTracks;
+        })
+        .catch(err => console.log(err));
+
+     axios.post('https://spotifyflask.herokuapp.com/favorites')
+        
+
 });
 
 
